@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block body %}
+{% load static %}
+    <img src="{% static "b.jpg" %}" alt="home_tab" width="1400" height="700">
+    <div class="carousel-caption d-none d-md-block">
+      <h5 class="display-1 text-secondary">Welcome to Nel D Son's Site</h5>
+      <p>please sit back and enjoy the stories.</p>
+      <div class="text-center py-2">
+      <img src="{% static "logo.jpg" %}" alt="Logo" width="50" height="50" class="img-thumbnail">
+      <div class="container py-3">
+        <a class="btn" href="/stories"><h1>let's go!</h1></a>
+      </div>
+    </div>
+    </div>
+    <div class="card text-center">
+      <div class="card-header">
+        <h1>Nel D Son</h1>
+      </div>
+      <div class="card-body py-5">
+        <h5 class="card-title">This website was created by Nel D Son Shougaijam</h5>
+        <p class="card-text">please enjoy your time, thank you.</p>
+        <img src="{% static "logo.jpg" %}" alt="Logo" width="50" height="50" class="img-thumbnail">
+      </div>
+  </div>
+
+  {% endblock body %}
+    

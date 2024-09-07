@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block body %}
+{% load static %}
+{% for stories in story %}
+    <div class="container py-5 px-5">
+        <div class="card text-bg-dark">
+            <img src="{{ stories.thumb }}" class="card-img" alt="...">
+            <div class="card-img-overlay">
+              <h5 class="card-title display-1 text-dark">{{ stories.name }}</h5>
+              <p class="card-text text-dark">{{ stories.date }}</p>
+              <img src="{% static "logo.jpg" %}" alt="Logo" width="50" height="50" class="img-thumbnail">
+              <div class="container py-3">
+                <a class="btn " href="{% url "home:story_detail" slug=stories.slug %}"><h1>read</h1></a>
+                </div>
+            </div>
+          </div>
+    </div>
+  
+{% endfor %}
+{% load static %}
+<div class="card text-center">
+    <div class="card-header">
+      <h1>Nel D Son</h1>
+    </div>
+    <div class="card-body py-5">
+      <h5 class="card-title">This website was created by Nel D Son Shougaijam</h5>
+      <p class="card-text">please enjoy your time, thank you.</p>
+      <img src="{% static "logo.jpg" %}" alt="Logo" width="50" height="50" class="img-thumbnail">
+    </div>
+</div>
+{% endblock body %}
+    

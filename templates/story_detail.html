@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body %}
+<div>
+    <div class="container text-center py-5 px-5">
+        <h1 class="h1">{{ story.name }}</h1>
+    </div>
+    <div class="container px-5">
+        {{ story.maint }}
+    </div>
+    <div class="container text-center py-3">
+        <figcaption class="blockquote-footer">
+            Nel D' Son Shougaijam
+          </figcaption>
+        <h6>{{ story.date }}</h6>
+    </div>
+    
+    <div class="container  py-5 px-5">
+        <form action="{% url "home:like" slug=story.slug %}" method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-primary">like {{ story.number_of_likes }}</button>
+        {% if request.user in story.likes.all %}
+        {% else %}
+        {% endif %}
+    </form>
+    </div>
+    <div class="container py-5"></div>
+</div>
+<div class="card text-center">
+    <div class="card-header">
+      <h1>Nel D Son</h1>
+    </div>
+    <div class="card-body py-5">
+      <h5 class="card-title">This website was created by Nel D Son Shougaijam</h5>
+      <p class="card-text">please enjoy your time, thank you.</p>
+      <img src="{% static "logo.jpg" %}" alt="Logo" width="50" height="50" class="img-thumbnail">
+    </div>
+</div>
+
+{% endblock body %}
