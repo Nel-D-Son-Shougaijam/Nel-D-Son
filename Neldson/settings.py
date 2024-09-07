@@ -80,7 +80,7 @@ WSGI_APPLICATION = 'Neldson.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(conn_max_age=600)
+    'default': dj_database_url.config(default='postgres://mydatabase_294c_user:Fja9sCszbsOjUzmj1nxT1zxw7ZYiOgba@dpg-cre49n3v2p9s73cq3qa0-a:5432/mydatabase')
 }
 
 
