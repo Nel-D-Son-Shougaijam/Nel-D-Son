@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '*a7*b%_=+bnu+vu&qo9086x2)7d$et=x5&62g_(=py+v^^k+%o'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['NelDSon.onrender.com']
 
@@ -80,15 +80,8 @@ WSGI_APPLICATION = 'Neldson.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'mydatabase',
-        'USER': 'mydatabase_294c_user',
-        'PASSWORD': 'Fja9sCszbsOjUzmj1nxT1zxw7ZYiOgba',
-        'HOST': 'dpg-cre49n3v2p9s73cq3qa0-a',
-        'PORT': '5432', # default PostgreSQL port
-    }
-    }
+    'default': dj_database_url.config(conn_max_age=600)
+}
 
 
 
