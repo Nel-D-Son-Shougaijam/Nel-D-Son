@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 from pathlib import Path
 import os
 import dj_database_url
-
+import psycopg2
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -80,8 +80,16 @@ WSGI_APPLICATION = 'Neldson.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
-}
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'mydatabase',
+        'USER': 'mydatabase_294c_user',
+        'PASSWORD': 'Fja9sCszbsOjUzmj1nxT1zxw7ZYiOgba',
+        'HOST': 'dpg-cre49n3v2p9s73cq3qa0-a',
+        'PORT': '5432', # default PostgreSQL port
+    }
+    }
+
 
 
 # Password validation
