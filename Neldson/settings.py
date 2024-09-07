@@ -11,9 +11,9 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
-
+import os
 import dj_database_url
-DATABASES['default'] = dj_database_url.config()
+
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -35,7 +35,6 @@ ALLOWED_HOSTS = ['NelDSon.onrender.com']
 # Application definition
 
 INSTALLED_APPS = [
-    'whitenoise.runserver.nostatic'
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -47,7 +46,6 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -81,10 +79,7 @@ WSGI_APPLICATION = 'Neldson.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
 
 
@@ -125,10 +120,6 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 STATIC_ROOT = BASE_DIR / 'static'
-
-STATICFILES_DIRS = [
-    BASE_DIR / 'static'
-    ]
 
 
 # Default primary key field type
