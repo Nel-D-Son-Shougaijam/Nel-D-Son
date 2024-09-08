@@ -8,8 +8,11 @@ def home(request):
     return render(request,'home.html',{'story':story})
 
 def stories(request):
-    story = Story.objects.all()
-    return render(request,'stories.html',{'story':story})
+    try:
+        story = Story.objects.all()
+        return render(request,'stories.html',{'story':story})
+    except:
+        return render(request,'s.html')
 
 def about(request):
     return render(request,'about.html')
