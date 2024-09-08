@@ -82,7 +82,7 @@ WSGI_APPLICATION = 'Neldson.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'NelDSon-db',
+        'NAME': 'mydb_9lxk',
         'USER': 'mydb_9lxk_user',
         'PASSWORD': '72q22bVGX0m2kG2oeVCQBVH31tmAx8QZ',
         'HOST': 'dpg-crehvfbgbbvc73br1os0-a',
