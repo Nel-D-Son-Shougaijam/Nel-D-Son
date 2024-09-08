@@ -81,12 +81,12 @@ WSGI_APPLICATION = 'Neldson.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'mydb_9lxk',
-        'USER': 'mydb_9lxk_user',
-        'PASSWORD': '72q22bVGX0m2kG2oeVCQBVH31tmAx8QZ',
-        'HOST': 'dpg-crehvfbgbbvc73br1os0-a',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'if0_37267182_NelDSondb',
+        'USER': 'if0_37267182',
+        'PASSWORD': '7YyH5dUMLPcfiKj',
+        'HOST': 'sql208.infinityfree.com',
+        'PORT': '3306',
     }
 }
 
