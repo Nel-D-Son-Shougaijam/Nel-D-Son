@@ -81,11 +81,8 @@ WSGI_APPLICATION = 'Neldson.wsgi.application'
 
 import environ
 
-env = environ.Env()
-environ.Env.read_env()
-
 DATABASES = {
-    'default': dj_database_url.parse( os.environ.get("DATABASE_URL"))
+    'default': dj_database_url.parse("postgresql://mydb_93jm_user:2Zi8h3dY55ZpEi44D7eNATiHtGx6SQa7@dpg-cret69bgbbvc73btufr0-a.singapore-postgres.render.com/mydb_93jm")
 }
 
 
