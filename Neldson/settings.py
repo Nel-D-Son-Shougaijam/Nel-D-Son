@@ -82,14 +82,13 @@ WSGI_APPLICATION = 'Neldson.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'mydb_93jm',
-        'USER': 'mydb_93jm_user',
-        'PASSWORD': '2Zi8h3dY55ZpEi44D7eNATiHtGx6SQa7',
-        'HOST': 'dpg-cret69bgbbvc73btufr0-a',
+        'NAME': 'my_new_database',
+        'USER': 'postgres',
+        'PASSWORD': 'neldson1234@A',
+        'HOST': 'localhost',
         'PORT': '5432',
     }
 }
-
 
 
 
