@@ -84,10 +84,8 @@ import environ
 env = environ.Env()
 environ.Env.read_env()
 
-print("DATABASE_URL:", env('DATABASE_URL'))
-
 DATABASES = {
-    'default': env.db()  # Assumes DATABASE_URL is set in your .env file
+    'default': dj_database_url.parse( os.environ.get("DATABASE_URL"))
 }
 
 
