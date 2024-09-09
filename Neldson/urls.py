@@ -22,5 +22,5 @@ urlpatterns = [
     path('youdontknowthisexisted/', admin.site.urls),
     path('',include('mains.urls'))
 ]
-
+ 
 urlpatterns += staticfiles_urlpatterns()
