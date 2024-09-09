@@ -79,16 +79,15 @@ WSGI_APPLICATION = 'Neldson.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+import environ
+
+env = environ.Env()
+environ.Env.read_env()
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'my_new_database',
-        'USER': 'postgres',
-        'PASSWORD': 'neldson1234@A',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
+    'default': env.db()  # Assumes DATABASE_URL is set in your .env file
 }
+
 
 
 
