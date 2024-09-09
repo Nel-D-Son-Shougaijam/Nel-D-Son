@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 class Story(models.Model):
-    thumb = models.ImageField(upload_to='media/', default='static/blog_cover.jpg',blank=True)
+    thumb = models.ImageField(upload_to='static/', default='static/blog_cover.jpg',blank=True)
     name = models.CharField(max_length=120,default=models.DateField(auto_now_add=True))
     slug = models.SlugField(default=models.AutoField())
     maint = models.TextField()
